@@ -24,12 +24,12 @@ public class StudentController {
 	@Autowired
 	private DepartmentRepository drepository; 
 	
-	// Show all students
+	/*
     @RequestMapping(value="/login")
     public String login() {	
         return "login";
     }	
-	
+	*/
 	// Show all students
     @RequestMapping(value="/studentlist")
     public String studentList(Model model) {	

@@ -21,20 +21,8 @@ public class UserController {
 	@Autowired
     private AppUserRepository repository; 
 	
-    @RequestMapping(value = "signup")
-    public String addStudent(Model model){
-    	model.addAttribute("signupform", new SignupForm());
-        return "signup";
-    }	
-    
-    /**
-     * Create new user
-     * Check if user already exists & form validation
-     * 
-     * @param signupForm
-     * @param bindingResult
-     * @return
-     */
+
+/*
     @RequestMapping(value = "saveuser", method = RequestMethod.POST)
     public String save(@Valid @ModelAttribute("signupform") SignupForm signupForm, BindingResult bindingResult) {
     	if (!bindingResult.hasErrors()) { // validation errors
@@ -65,5 +53,5 @@ public class UserController {
     	}
     	return "redirect:/login";    	
     }    
-    
+  */  
 }

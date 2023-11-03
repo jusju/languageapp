@@ -15,6 +15,10 @@
 				<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>	
 			</div>
 			<div>
+				<label> Email :<input type="text" th:field="*{email}" class="form-control"/></label>
+				<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email name Error</p>	
+			</div>
+			<div>
 				<label> Password :<input type="password" th:field="*{password}" class="form-control"/></label>
 				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>	
 			</div>

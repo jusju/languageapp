@@ -12,6 +12,10 @@ public class SignupForm {
     private String password = "";
 
     @NotEmpty
+    @Size(min=2, max=40)
+    private String email = "";
+    
+    @NotEmpty
     @Size(min=7, max=30)
     private String passwordCheck = "";
 
@@ -34,6 +38,14 @@ public class SignupForm {
 		this.password = password;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getPasswordCheck() {
 		return passwordCheck;
 	}
@@ -49,6 +61,8 @@ public class SignupForm {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+
     
     
 }
