@@ -27,7 +27,7 @@ public class WebSecurityConfig  {
 		http
 		.authorizeHttpRequests(authorize -> authorize
 				.requestMatchers(antMatcher("/css/**")).permitAll()
-				.requestMatchers(antMatcher("/signup")).permitAll()
+				.requestMatchers(antMatcher("/registration")).permitAll()
 				.requestMatchers(antMatcher("/saveuser")).permitAll()
 				.anyRequest().authenticated()
 		)
@@ -37,7 +37,7 @@ public class WebSecurityConfig  {
 			    )
 		)
 		.formLogin(formlogin -> formlogin
-				.loginPage("/login")
+				.loginPage("/signin")
 				.defaultSuccessUrl("/flashcards", true)
 				.permitAll()
 		)

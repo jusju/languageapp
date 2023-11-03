@@ -67,7 +67,7 @@ public class FlashcardController {
 		return "redirect:/login";
 	}
 	
-	@RequestMapping(value="/login")
+	@RequestMapping(value="/signin")
 	public String login() {
 		return "login";
 	}    
