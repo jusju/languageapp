@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<title>Study sessions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a calss="nav-link" th:href="@{/sessionlist}">Study session list</a>
+			<a calss="nav-link" th:href="@{/flashcards}">Flashcards</a>
+		</div>
+	</nav>
+
+	<div>
+
+		<h1>Your flascards</h1>
+
+
+		<table class="table table-striped">
+			<tbody>
+				<tr>
+					<td>Front</td>
+					<td>Back</td>
+					<td>Action</td>
+				</tr>
+				<tr th:each="flashcard : ${flashcards}">
+                <td>
+                    <div th:if="${flashcard.showBack == false}">
+                        <p th:text="${flashcard.front}"></p>
+                    </div>
+                </td>
+                <td>
+                	<div th:if="${flashcard.showBack == true}">
+                        <p th:text="${flashcard.back}"></p>
+                    </div>
+                </td>
+                <td>
+                	<div th:if="${flashcard.showBack == false}">
+                		<a th:href="@{/showback/{id}(id=${flashcard.id})}" class="btn btn-xs btn-danger">Show Back</a>
+                	</div>
+                	<div th:if="${flashcard.showBack == true}">
+                		<a th:href="@{/showfront/{id}(id=${flashcard.id})}" class="btn btn-xs btn-danger">Show Front</a>
+                	</div>
+                </td>
+            </tr>
+			</tbody>
+		</table>
+	</div>
+</body>
